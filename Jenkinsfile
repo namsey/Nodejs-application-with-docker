@@ -4,12 +4,7 @@ pipeline {
       DOCKERHUB_CREDENTIALS=credentials('dockerhub')
     }
   stages {
-      stage('Removing existing Image/Container') {
-    steps {
-      sh 'docker rmi -f naman11/nodejs_app:latest'
-      sh 'docker rm -f naman11/nodejs_app'
-    }
-  }
+    
     stage('Code Checkout') {
       steps{
         git 'https://github.com/namsey/Nodejs-application-with-docker.git'
